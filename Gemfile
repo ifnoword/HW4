@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 gem 'multi_json', '~>1.8.1'
@@ -17,7 +17,7 @@ group :development, :test do
 end
 group :test do
   gem 'cucumber-rails'
-  gem 'cucumber-rails-training-wheels'
+  #gem 'cucumber-rails-training-wheels'
 end
 group :production do
   gem 'pg'

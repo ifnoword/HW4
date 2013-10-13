@@ -1,5 +1,5 @@
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     actionmailer (3.2.13)
       actionpack (= 3.2.13)
@@ -55,8 +55,6 @@ GEM
       cucumber (>= 1.2.0)
       nokogiri (>= 1.5.0)
       rails (>= 3.0.0)
-    cucumber-rails-training-wheels (1.0.0)
-      cucumber-rails (>= 1.1.1)
     database_cleaner (1.1.1)
     diff-lcs (1.2.4)
     erubis (2.7.0)
@@ -156,7 +154,6 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 3.2.1)
   cucumber-rails
-  cucumber-rails-training-wheels
   database_cleaner
   haml
   jquery-rails
