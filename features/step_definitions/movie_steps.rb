@@ -66,10 +66,6 @@ When /^I have opted to see movies rated: "(.*?)"$/ do |arg1|
     end
   end
   click_button 'Refresh'
-  # HINT: use String#split to split up the rating_list, then
-  # iterate over the ratings and check/uncheck the ratings
-  # using the appropriate Capybara command(s)
-  #flunk "Unimplemented"
 end
 
 Then /^I should see only movies rated "(.*?)"$/ do |arg1|
@@ -98,10 +94,17 @@ end
 Then /^I should see all of the movies$/ do
   n_movies_on_page=page.find_by_id('movies').find('tbody').all('tr').length
   n_movies_in_db=Movie.count
-  if n_movies_in_db!=n_movies_on_page
-    flunk "Some movies are missed!"
-  end
+
+  flunk "Some movies are missing!" unless n_movies_in_db==n_movies_on_page
 end
 
 
+When(/^I have opted to sort movies by: "(.*?)"$/) do |arg1|
+  click_on "#{arg1}"
+end
+
+Then(/^I should see "(.*?)" before "(.*?)"$/) do |movie1, movie2|
+  flunk "Sort incorrectly" unless page.body.match(/.*#{movie1}.*#{movie2}.*/m)
+
+end
 
